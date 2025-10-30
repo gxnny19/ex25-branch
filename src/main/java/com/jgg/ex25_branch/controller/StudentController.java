@@ -17,7 +17,8 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/students")
 @RequiredArgsConstructor
 public class StudentController {
-	private final StudentService studentService = new StudentService();
+	
+	private final StudentService studentService;
 
 //	list화면: 전체 학생 목록
 	@GetMapping
@@ -42,7 +43,7 @@ public class StudentController {
 		return "redirect:/students";
 	}
 
-//	http://localhost:8080/students/11/edit
+//	http://localhost:8091/students/11/edit
 //	수정폼
 	@GetMapping("/{id}/edit")
 	public String updateForm(@PathVariable Long id, Model model) {
@@ -58,7 +59,7 @@ public class StudentController {
 		return "redirect:/students";
 	}
 
-//	http://localhost:8080/students/11/delete
+//	http://localhost:8091/students/11/delete
 	// 삭제 처리
 	@PostMapping("/{id}/delete")
 	public String delete(@PathVariable Long id) {

@@ -37,7 +37,7 @@ public class StudentRestController {
 //		private final StudentService studentService;
 //	}
 
-	private final StudentService studentService = new StudentService();
+	private final StudentService studentService;
 
 //	전체 조회: GET http://localhost:8080/api/students
 	@GetMapping
