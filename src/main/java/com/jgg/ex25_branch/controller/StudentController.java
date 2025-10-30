@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/students")
 @RequiredArgsConstructor
 public class StudentController {
-	private final StudentService studentService = new StudentService();
+	private final StudentService studentService;
 
 //	list화면: 전체 학생 목록
 	@GetMapping
