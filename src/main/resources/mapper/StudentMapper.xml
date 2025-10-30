@@ -5,30 +5,32 @@
 
 <mapper namespace="com.jgg.ex25_branch.mapper.StudentMapper">
 
-  <select id="findAll" resultType="Student">
- 	   SELECT * FROM student ORDER BY id DESC
-  </select>
-  
-  <!--
-  <select id="findById" parameterType="long" resultType="Student">
-    	SELECT * FROM student WHERE id = #{id}
-  </select>
- 
-  <insert id="insert" parameterType="Student" 
-  useGeneratedKeys="true" keyProperty="id">
-	  	INSERT INTO student(NAME, email, age) 
-	  	VALUES (#{name}, #{email}, #{age})
-  </insert>
-  
-  <update id="update" parameterType="Student">
-	  	UPDATE student
-		SET NAME = #{name}, email = #{email}, age = #{age}
-		WHERE id = #{id}
-  </update>
- 
- <delete id="delete" parameterType="long">
+    <!-- 전체 조회 -->
+    <select id="findAll" resultType="com.jgg.ex25_branch.domain.Student">
+        SELECT * FROM student ORDER BY id DESC
+    </select>
+
+    <!-- 단건 조회 -->
+    <select id="findById" parameterType="long" resultType="com.jgg.ex25_branch.domain.Student">
+        SELECT * FROM student WHERE id = #{id}
+    </select>
+
+    <!-- 등록 -->
+    <insert id="insert" parameterType="com.jgg.ex25_branch.domain.Student" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO student(name, email, age)
+        VALUES (#{name}, #{email}, #{age})
+    </insert>
+
+    <!-- 수정 -->
+    <update id="update" parameterType="com.jgg.ex25_branch.domain.Student">
+        UPDATE student
+        SET name = #{name}, email = #{email}, age = #{age}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 삭제 -->
+    <delete id="delete" parameterType="long">
         DELETE FROM student WHERE id = #{id}
- </delete>
- -->
- 
+    </delete>
+
 </mapper>

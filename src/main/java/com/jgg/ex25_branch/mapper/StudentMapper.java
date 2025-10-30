@@ -1,20 +1,25 @@
 package com.jgg.ex25_branch.mapper;
 
 import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
-
+import org.apache.ibatis.annotations.Param;
 import com.jgg.ex25_branch.domain.Student;
 
 @Mapper
 public interface StudentMapper {
-	List<Student> findAll();
 
-	Student findById(Long id);
+    // 전체 조회
+    List<Student> findAll();
 
-	void insert(Student student);
+    // 단건 조회
+    Student findById(@Param("id") Long id);
 
-	void update(Student student);
+    // 등록
+    void insert(Student student);
 
-	void delete(Long id);
+    // 수정
+    void update(Student student);
+
+    // 삭제
+    void delete(@Param("id") Long id);
 }

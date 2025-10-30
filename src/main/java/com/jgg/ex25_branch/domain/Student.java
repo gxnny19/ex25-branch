@@ -13,7 +13,4 @@ public class Student {
 	private Integer age;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
-	public void setId(Long id2) {
-		
-	}
 }

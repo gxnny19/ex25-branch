@@ -97,6 +97,10 @@
 				<a href="/students" class="btn btn-secondary">취소</a>
 			</div>
 		</form>
+		<form th:action="@{/students/{id}/delete(id=${student.id})}" method="post" style="display:inline">
+		    <button type="submit" class="btn btn-danger">삭제</button>
+		</form>
+
 	</div>
 </body>
 
